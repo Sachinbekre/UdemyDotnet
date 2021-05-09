@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-BaseUrl = 'https://localhost:5001/api/'
+  BaseUrl = 'https://localhost:5001/api/'
   constructor(
     private _http:HttpClient
   ) { }

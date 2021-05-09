@@ -1,0 +1,45 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<div class="container">
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <a class="navbar-brand" href="#">.NetCore Tutorial by Udemy</a>
+    <ul class="navbar-nav mr-auto" *ngIf="_loginService.currentUser$ | async">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lists</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+    </ul>
+    <div class="dropdown" *ngIf="_loginService.currentUser$ | async">
+      <button class="btn btn-secondary dropdown-toggle"
+      type="button" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Welcome {{Users.username}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" >Profile</a>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </div>
+    <form class="d-flex" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" *ngIf="(_loginService.currentUser$ | async)===null">
+      <input
+      name="username"
+      [(ngModel)]="Users.username"
+       class="form-control mr-sm-2"
+       type="text"
+       placeholder="Username">
+      <input
+      name="password"
+      [(ngModel)]="Users.password"
+       class="form-control mr-sm-2"
+       type="password"
+       placeholder="Password">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+  </div>
+</div>
+</nav>

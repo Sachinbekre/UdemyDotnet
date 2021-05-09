@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Users } from './models/Users';
 import { AppService } from './services/app.service';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +10,22 @@ import { AppService } from './services/app.service';
 })
 export class AppComponent implements OnInit{
   title = 'client';
-  userList;
+
   constructor(
-    private _appServices:AppService
+    private _appServices:AppService,
+    private _loginService :LoginService
   ){
   }
   ngOnInit(){
-    this._appServices.getUsers().subscribe(response =>{
-      console.log(response);
-      this.userList = response;
-    });
+    this.setCurrentUsers();
   }
+
+  setCurrentUsers(){
+    const users:Users = JSON.parse(localStorage.getItem('users'));
+    this._loginService.setCurrentUser(users);
+   }
+
+
+
 
 }
