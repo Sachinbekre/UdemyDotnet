@@ -1,18 +1,20 @@
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
 <div class="container">
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <a class="navbar-brand" href="#">.NetCore Tutorial by Udemy</a>
-    <ul class="navbar-nav mr-auto" *ngIf="_loginService.currentUser$ | async">
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active">.NetCore Tutorial by Udemy</a>
+    <ul class="navbar-nav mr-auto" >
+     <ng-container *ngIf="_loginService.currentUser$ | async">
       <li class="nav-item">
-        <a class="nav-link" href="#">Matches</a>
+        <a class="nav-link" [routerLink]="['/members']" routerLinkActive="active">Matches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Lists</a>
+        <a class="nav-link" [routerLink]="['/lists']" routerLinkActive="active" >Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <a class="nav-link" [routerLink]="['/messages']" routerLinkActive="active">Messages</a>
       </li>
+     </ng-container>
     </ul>
     <div class="dropdown" *ngIf="_loginService.currentUser$ | async">
       <button class="btn btn-secondary dropdown-toggle"
@@ -38,7 +40,7 @@
        class="form-control mr-sm-2"
        type="password"
        placeholder="Password">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
     </form>
   </div>
 </div>
