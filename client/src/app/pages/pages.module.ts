@@ -9,6 +9,8 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailsComponent } from './members/member-details/member-details.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { ListsComponent } from './lists/lists.component';
     MemberDetailsComponent,
     MessagesComponent,
     ListsComponent,
+    MemberCardComponent,
     // FormsModule,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

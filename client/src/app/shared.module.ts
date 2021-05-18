@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    ToastrModule.forRoot()
+    NgxGalleryModule,
+    ToastrModule.forRoot(),
+    TabsModule.forRoot(),
   ],
-  exports:[ToastrModule]
+  exports:[ToastrModule, TabsModule, NgxGalleryModule]
 })
 export class SharedModule { }
