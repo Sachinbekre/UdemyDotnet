@@ -11,6 +11,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { SharedModule } from '../shared.module';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { SignoutComponent } from './signout/signout.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SharedModule } from '../shared.module';
     MessagesComponent,
     ListsComponent,
     MemberCardComponent,
+    MemberEditComponent,
+    SignoutComponent,
     // FormsModule,
   ],
   imports: [
