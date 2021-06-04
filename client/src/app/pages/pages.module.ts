@@ -13,6 +13,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { SharedModule } from '../shared.module';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { SignoutComponent } from './signout/signout.component';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SignoutComponent } from './signout/signout.component';
     MemberCardComponent,
     MemberEditComponent,
     SignoutComponent,
+    PhotoEditorComponent,
     // FormsModule,
   ],
   imports: [

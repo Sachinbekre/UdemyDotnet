@@ -20,11 +20,20 @@ export class NavComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this._loginService.currentUser$.subscribe(users =>{
+      if(users){
+        debugger;
+        this.Users = users;
+        console.log("observable",this.Users);
+      }
+
+    });
   }
  login(){
    console.log("Users",this.Users);
    this._loginService.login(this.Users).subscribe(response => {
     console.log("login response",response);
+    this.Users = response;
     this.router.navigateByUrl('/members');
    },error =>{
    });

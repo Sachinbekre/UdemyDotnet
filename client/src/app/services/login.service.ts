@@ -23,8 +23,8 @@ export class LoginService {
       map((response:Users) =>{
         const users = response;
         if(users){
-          localStorage.setItem('users', JSON.stringify(users));
-          this.currentUserSource.next(users);
+          this.setCurrentUser(users);
+          return users;
         }
       })
     )
@@ -36,14 +36,14 @@ export class LoginService {
     return this._http.post(this.BaseUrl+url,users).pipe(
       map((response:Users) =>{
         if(users){
-          localStorage.setItem('users', JSON.stringify(response));
-          this.currentUserSource.next(response);
+          this.setCurrentUser(users);
         }
       })
     )
   }
 
   setCurrentUser(users:Users){
+    localStorage.setItem('users', JSON.stringify(users));
     this.currentUserSource.next(users);
   }
 

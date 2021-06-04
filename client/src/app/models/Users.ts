@@ -1,4 +1,5 @@
 export interface Users {
   username : string,
-  token : string
+  token : string,
+  photoUrl:string
 }
