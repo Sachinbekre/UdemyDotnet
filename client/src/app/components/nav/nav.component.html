@@ -20,7 +20,7 @@
     </li>
     </ul>
     <div class="dropdown" *ngIf="_loginService.currentUser$ | async">
-      <img src="{{Users.photoUrl}}" alt="{{Users.username}}">
+      <img src="{{Users.photoUrl || './assets/user.png'}}" alt="{{Users.username}}">
       <button class="btn btn-secondary dropdown-toggle"
       type="button" id="dropdownMenuButton"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

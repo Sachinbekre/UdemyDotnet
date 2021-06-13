@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './components/nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared.module';
@@ -17,6 +17,7 @@ import { ServerErrorComponent } from './Errors/server-error/server-error.compone
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { SpinnerInterceptor } from './interceptor/spinner.interceptor';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { SpinnerInterceptor } from './interceptor/spinner.interceptor';
     NavComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
